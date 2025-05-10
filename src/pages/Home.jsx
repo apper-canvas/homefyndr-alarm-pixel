@@ -322,7 +322,7 @@ const Home = () => {
               <h3 className="text-xl font-semibold mb-2">Mood Tracking</h3>
               <h3 className="text-xl font-semibold mb-2">Virtual Tours</h3>
                 <Link to="/mood-tracker" className="text-accent hover:text-accent/80 transition-colors">Track your emotional wellbeing</Link> with our new mood tracking feature to understand your patterns.
-                Explore properties remotely with our detailed virtual tours and high-quality photos.
+              <p><Link to="/mood-tracker" className="text-accent hover:text-accent/80 transition-colors">Track your emotional wellbeing</Link> with our new mood tracking feature to understand your patterns.
               </p>
             </div>
           </div>
