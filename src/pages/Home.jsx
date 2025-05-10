@@ -161,7 +161,9 @@ const Home = () => {
                 className="mt-4 text-white/80 hover:text-white text-sm flex items-center justify-center gap-1 mx-auto transition-colors"
               >
                 {isHeroFormVisible ? "Simple Search" : "Advanced Search"}
-                {getIcon(isHeroFormVisible ? 'ChevronUp' : 'ChevronDown')({ className: "w-4 h-4" })}
+                {React.createElement(getIcon(isHeroFormVisible ? 'ChevronUp' : 'ChevronDown'), { 
+                  className: "w-4 h-4" 
+                })}
               </button>
               
               {isHeroFormVisible && (
