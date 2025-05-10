@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+
 import { motion } from 'framer-motion';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
