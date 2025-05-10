@@ -161,10 +161,9 @@ const Home = () => {
                 onClick={toggleHeroForm}
                 className="mt-4 text-white/80 hover:text-white text-sm flex items-center justify-center gap-1 mx-auto transition-colors"
               >
-                {isHeroFormVisible ? "Simple Search" : "Advanced Search"}
-                {React.createElement(getIcon(isHeroFormVisible ? 'ChevronUp' : 'ChevronDown'), { 
-                  className: "w-4 h-4" 
-                })}
+                {isHeroFormVisible ? "Simple Search" : "Advanced Search"} 
+                {isHeroFormVisible ? <ChevronUpIcon className="w-4 h-4" /> : <ChevronDownIcon className="w-4 h-4" />}
+                
               </button>
               
               {isHeroFormVisible && (
@@ -223,7 +222,7 @@ const Home = () => {
             <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-0">Featured Properties</h2>
             <a href="#" className="text-primary hover:text-primary-dark dark:hover:text-primary-light transition-colors flex items-center gap-1">
               View all properties
-              {getIcon('ArrowRight')({ className: "w-4 h-4" })}
+              <ArrowRightIcon className="w-4 h-4" />
             </a>
           </div>
           
@@ -334,3 +333,4 @@ const Home = () => {
 };
 
 export default Home;
+                    {mapView ? <ListIcon className="w-4 h-4" /> : <MapIcon className="w-4 h-4" />}
