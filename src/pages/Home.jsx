@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 import getIcon from '../utils/iconUtils';
 import MainFeature from '../components/MainFeature';
 
@@ -19,6 +20,7 @@ const Home = () => {
   const HeartIcon = getIcon('Heart');
   const ClipboardCheckIcon = getIcon('ClipboardCheck');
 
+  const SmileIcon = getIcon('Smile');
   const handleQuickSearch = (e) => {
     e.preventDefault();
     if (searchQuery.trim() === '') {
@@ -313,11 +315,11 @@ const Home = () => {
             </div>
             
             <div className="bg-white dark:bg-surface-700 p-6 rounded-xl shadow-soft">
-              <div className="w-12 h-12 bg-accent/10 dark:bg-accent/20 rounded-full flex items-center justify-center mb-4">
+                <SmileIcon className="w-6 h-6 text-accent" />
                 <HomeIcon className="w-6 h-6 text-accent" />
-              </div>
+              <h3 className="text-xl font-semibold mb-2">Mood Tracking</h3>
               <h3 className="text-xl font-semibold mb-2">Virtual Tours</h3>
-              <p className="text-surface-600 dark:text-surface-300">
+                <Link to="/mood-tracker" className="text-accent hover:text-accent/80 transition-colors">Track your emotional wellbeing</Link> with our new mood tracking feature to understand your patterns.
                 Explore properties remotely with our detailed virtual tours and high-quality photos.
               </p>
             </div>

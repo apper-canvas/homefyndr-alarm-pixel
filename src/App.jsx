@@ -6,6 +6,7 @@ import getIcon from './utils/iconUtils';
 // Pages
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
+import MoodTracker from './pages/MoodTracker';
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -47,6 +48,7 @@ function App() {
   const MoonIcon = getIcon('Moon');
   const SunIcon = getIcon('Sun');
   const HomeIcon = getIcon('Home');
+  const SmileIcon = getIcon('Smile');
   
   return (
     <div className="min-h-screen flex flex-col">
@@ -59,6 +61,14 @@ function App() {
               <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">HomeFyndr</span>
             </div>
             <div className="flex items-center space-x-4">
+              <nav className="hidden md:flex space-x-6">
+                <a href="/" className="text-surface-600 hover:text-primary dark:text-surface-400 dark:hover:text-primary-light transition-colors">
+                  Home
+                </a>
+                <a href="/mood-tracker" className="text-surface-600 hover:text-primary dark:text-surface-400 dark:hover:text-primary-light transition-colors flex items-center">
+                  <SmileIcon className="w-4 h-4 mr-1" /> Mood Tracker
+                </a>
+              </nav>
               <button
                 onClick={toggleDarkMode}
                 className="p-2 rounded-full bg-surface-100 dark:bg-surface-700 hover:bg-surface-200 dark:hover:bg-surface-600 transition-colors"
@@ -75,6 +85,7 @@ function App() {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/mood-tracker" element={<MoodTracker />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
