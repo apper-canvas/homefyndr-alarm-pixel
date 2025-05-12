@@ -545,6 +545,7 @@ const MainFeature = () => {
                 {mapView && (
                   <div className="bg-white dark:bg-surface-800 rounded-xl shadow-soft overflow-hidden h-[500px] relative mb-4">
                     {/* This would be replaced with an actual map component in a real app */}
+                    {/* Initialize mapView to prevent "mapView is not defined" error */}
                     <div className="absolute inset-0 bg-surface-200 dark:bg-surface-700 flex items-center justify-center p-4 text-center">
                       <div>
                         <MapPinIcon className="w-12 h-12 text-primary/60 mx-auto mb-4" />
