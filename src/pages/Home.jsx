@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom'; 
 import { motion } from 'framer-motion';
 import { toast } from 'react-toastify';
-import getIcon from '../utils/iconUtils';
+import getIcon from '../utils/iconUtils'; 
 import MainFeature from '../components/MainFeature';
 
 const Home = () => {
@@ -14,11 +14,16 @@ const Home = () => {
   const MapPinIcon = getIcon('MapPin');
   const HomeIcon = getIcon('Home');
   const DollarSignIcon = getIcon('DollarSign');
+  const ChevronUpIcon = getIcon('ChevronUp');
+  const ChevronDownIcon = getIcon('ChevronDown');
   const BedDoubleIcon = getIcon('BedDouble');
-  const mapView = useRef(null);
   const ShowerHeadIcon = getIcon('ShowerHead');
   const AreaIcon = getIcon('Move');
   const HeartIcon = getIcon('Heart');
+  const ArrowRightIcon = getIcon('ArrowRight');
+  const ListIcon = getIcon('List');
+  const MapIcon = getIcon('Map');
+  const mapView = useRef(null);
   const ClipboardCheckIcon = getIcon('ClipboardCheck');
 
   const SmileIcon = getIcon('Smile');
@@ -318,11 +323,8 @@ const Home = () => {
             
             <div className="bg-white dark:bg-surface-700 p-6 rounded-xl shadow-soft">
                 <SmileIcon className="w-6 h-6 text-accent" />
-                <HomeIcon className="w-6 h-6 text-accent" />
-              <h3 className="text-xl font-semibold mb-2">Mood Tracking</h3>
-              <h3 className="text-xl font-semibold mb-2">Virtual Tours</h3>
+              </div>
                 <Link to="/mood-tracker" className="text-accent hover:text-accent/80 transition-colors">Track your emotional wellbeing</Link> with our new mood tracking feature to understand your patterns.
-              <p><Link to="/mood-tracker" className="text-accent hover:text-accent/80 transition-colors">Track your emotional wellbeing</Link> with our new mood tracking feature to understand your patterns.
               </p>
             </div>
           </div>
@@ -333,4 +335,3 @@ const Home = () => {
 };
 
 export default Home;
-                    {mapView ? <ListIcon className="w-4 h-4" /> : <MapIcon className="w-4 h-4" />}
