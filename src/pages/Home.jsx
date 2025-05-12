@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom'; 
 import { motion } from 'framer-motion';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
@@ -16,6 +16,7 @@ const Home = () => {
   const HomeIcon = getIcon('Home');
   const DollarSignIcon = getIcon('DollarSign');
   const BedDoubleIcon = getIcon('BedDouble');
+  const mapView = useRef(null);
   const ShowerHeadIcon = getIcon('ShowerHead');
   const AreaIcon = getIcon('Move');
   const HeartIcon = getIcon('Heart');
