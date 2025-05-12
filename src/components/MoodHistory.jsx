@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, createElement } from 'react';
 import { motion } from 'framer-motion';
 import { format, subDays, parseISO } from 'date-fns';
 import Chart from 'react-apexcharts';
@@ -113,12 +113,12 @@ const MoodHistory = ({ entries, onDelete }) => {
   // Helper to get mood icon based on rating
   const getMoodIcon = (rating) => {
     switch(rating) {
-      case 5: return getIcon('SmilePlus')({ className: "w-5 h-5 text-green-500" });
-      case 4: return getIcon('Smile')({ className: "w-5 h-5 text-green-400" });
-      case 3: return getIcon('Meh')({ className: "w-5 h-5 text-yellow-400" });
-      case 2: return getIcon('Frown')({ className: "w-5 h-5 text-orange-400" });
-      case 1: return getIcon('FrownPlus')({ className: "w-5 h-5 text-red-500" });
-      default: return getIcon('Meh')({ className: "w-5 h-5 text-yellow-400" });
+      case 5: return createElement(getIcon('SmilePlus'), { className: "w-5 h-5 text-green-500" });
+      case 4: return createElement(getIcon('Smile'), { className: "w-5 h-5 text-green-400" });
+      case 3: return createElement(getIcon('Meh'), { className: "w-5 h-5 text-yellow-400" });
+      case 2: return createElement(getIcon('Frown'), { className: "w-5 h-5 text-orange-400" });
+      case 1: return createElement(getIcon('FrownPlus'), { className: "w-5 h-5 text-red-500" });
+      default: return createElement(getIcon('Meh'), { className: "w-5 h-5 text-yellow-400" });
     }
   };
 
@@ -131,7 +131,7 @@ const MoodHistory = ({ entries, onDelete }) => {
     >
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-xl font-semibold flex items-center">
-          {getIcon('ChartLine')({ className: "w-5 h-5 mr-2 text-primary" })}
+          {createElement(getIcon('ChartLine'), { className: "w-5 h-5 mr-2 text-primary" })}
           Mood History
         </h2>
         
@@ -156,7 +156,7 @@ const MoodHistory = ({ entries, onDelete }) => {
       {entries.length === 0 ? (
         <div className="text-center py-8">
           <div className="w-16 h-16 bg-surface-100 dark:bg-surface-700 rounded-full flex items-center justify-center mx-auto mb-4">
-            {getIcon('Calendar')({ className: "w-8 h-8 text-surface-400" })}
+            {createElement(getIcon('Calendar'), { className: "w-8 h-8 text-surface-400" })}
           </div>
           <h3 className="text-lg font-medium mb-2">No mood entries yet</h3>
           <p className="text-surface-500 dark:text-surface-400">

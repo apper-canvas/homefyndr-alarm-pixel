@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect, createElement } from 'react';
+import { motion } from 'framer-motion'; 
 import { format } from 'date-fns';
 import { toast } from 'react-toastify';
 import getIcon from '../utils/iconUtils';
@@ -31,7 +31,8 @@ const MoodTracker = () => {
     setMoodEntries(prevEntries => [newEntry, ...prevEntries]);
     
     toast.success('Mood entry saved successfully!', {
-      icon: getIcon('Check')({ className: 'w-5 h-5' }),
+      // Create the element properly using createElement
+      icon: createElement(getIcon('Check'), { className: 'w-5 h-5' }),
     });
   };
 
@@ -40,7 +41,8 @@ const MoodTracker = () => {
     setMoodEntries(prevEntries => prevEntries.filter(entry => entry.id !== id));
     
     toast.info('Mood entry deleted', {
-      icon: getIcon('Trash')({ className: 'w-5 h-5' }),
+      // Create the element properly using createElement
+      icon: createElement(getIcon('Trash'), { className: 'w-5 h-5' }),
     });
   };
 
@@ -55,7 +57,8 @@ const MoodTracker = () => {
             className="max-w-4xl mx-auto text-center"
           >
             <h1 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-2">
-              {getIcon('Smile')({ className: "w-8 h-8" })}
+              {/* Render the component correctly in JSX */}
+              {createElement(getIcon('Smile'), { className: "w-8 h-8" })}
               <span>Mood Tracker</span>
             </h1>
             <p className="text-lg opacity-90 mb-0">
