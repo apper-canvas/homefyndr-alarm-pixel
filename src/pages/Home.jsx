@@ -324,7 +324,9 @@ const Home = () => {
             <div className="bg-white dark:bg-surface-700 p-6 rounded-xl shadow-soft">
                 <SmileIcon className="w-6 h-6 text-accent" />
               </div>
-                <Link to="/mood-tracker" className="text-accent hover:text-accent/80 transition-colors">Track your emotional wellbeing</Link> with our new mood tracking feature to understand your patterns.
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Emotional Wellbeing</h3>
+              <p className="text-surface-600 dark:text-surface-300">
               </p>
             </div>
           </div>
