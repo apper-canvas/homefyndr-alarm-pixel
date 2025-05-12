@@ -322,15 +322,15 @@ const Home = () => {
             </div>
             
             <div className="bg-white dark:bg-surface-700 p-6 rounded-xl shadow-soft">
-                <SmileIcon className="w-6 h-6 text-accent" />
+              <div className="w-12 h-12 bg-accent/10 dark:bg-accent/20 rounded-full flex items-center justify-center mb-4">
                 <SmileIcon className="w-6 h-6 text-accent" />
               </div>
+              <h3 className="text-xl font-semibold mb-2">Mood Tracking</h3>
               <p className="text-surface-600 dark:text-surface-300">
-              </p>
                 <Link to="/mood-tracker" className="text-accent hover:text-accent/80 transition-colors">Track your emotional wellbeing</Link> with our new mood tracking feature to understand your patterns.
               </p>
+            </div>
           </div>
-        </div>
         </div>
       </section>
 
