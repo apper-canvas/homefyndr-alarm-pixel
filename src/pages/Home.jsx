@@ -335,7 +335,6 @@ const Home = () => {
       </section>
 
       {/* Additional content would go here */}
-      </section>
     </div>
   );
 };
