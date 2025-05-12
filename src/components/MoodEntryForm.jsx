@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, createElement } from 'react';
 import { motion } from 'framer-motion';
 import getIcon from '../utils/iconUtils';
 
@@ -70,7 +70,7 @@ const MoodEntryForm = ({ onSubmit }) => {
       className="bg-white dark:bg-surface-800 rounded-xl shadow-soft p-6"
     >
       <h2 className="text-xl font-semibold mb-6 flex items-center">
-        {getIcon('PenSquare')({ className: "w-5 h-5 mr-2 text-primary" })}
+        {createElement(getIcon('PenSquare'), { className: "w-5 h-5 mr-2 text-primary" })}
         How are you feeling today?
       </h2>
       
@@ -90,7 +90,7 @@ const MoodEntryForm = ({ onSubmit }) => {
                     : 'bg-surface-100 dark:bg-surface-700 border-2 border-transparent hover:bg-surface-200 dark:hover:bg-surface-600'
                 }`}
               >
-                {getIcon(mood.icon)({ className: `w-8 h-8 mb-1 ${mood.color}` })}
+                {createElement(getIcon(mood.icon), { className: `w-8 h-8 mb-1 ${mood.color}` })}
                 <span className="text-xs font-medium">{mood.label}</span>
               </button>
             ))}
@@ -112,7 +112,7 @@ const MoodEntryForm = ({ onSubmit }) => {
                     : 'bg-surface-100 dark:bg-surface-700 border border-transparent hover:bg-surface-200 dark:hover:bg-surface-600'
                 }`}
               >
-                {getIcon(activity.icon)({ className: "w-5 h-5 mb-1" })}
+                {createElement(getIcon(activity.icon), { className: "w-5 h-5 mb-1" })}
                 <span>{activity.label}</span>
               </button>
             ))}
